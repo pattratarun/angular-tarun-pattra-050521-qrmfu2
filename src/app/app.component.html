@@ -1,4 +1,58 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div>
+  <table>
+    <tr>
+      <td><input type="checkbox" value="Male" name="filterMale" onclick="filterGender()" ></td>
+      <td><input type="checkbox" value="Female" name="filterFemale"  onclick="filterGender()" ></td>
+      <td><input type="text" name="filteremail" onchange="filterEmail()"  placeholder="enter email"></td>
+    </tr>
+
+  </table>
+
+  <table>
+    <tr>
+      <th>
+        Select
+      </th>
+      <th>
+        First Name
+      </th>
+      <th>
+        Last Name
+      </th>
+      <th>
+        Email
+      </th>
+      <th>
+        Gender
+      </th>
+    </tr>
+
+    <tr *ngFor="let profile of profiles">
+      <td><input type="checkbox" value="{{profile.id}}"> </td>
+      <td>{{profile.id}}</td>
+      <td>{{profile.first_name}}</td>
+      <td>{{profile.last_name}}</td>
+      <td>{{profile.email}}</td>
+      <td>{{profile.gender}}</td>
+    </tr>
+  </table>
+
+  <div>Add New Candidate</div>
+  <table>
+    <tr>
+      <td>First Name:</td>
+      <td><input type="text" name="fName" ></td>
+      <td>Last Name:</td>
+      <td><input type="text" name="lName" ></td>
+      <td>Email:</td>
+      <td><input type="text" name="email"></td>
+    </tr>
+    <tr>
+      <td><input type="radio" value="Female"> </td>
+      <td><input type="radio" value="Male"> </td>
+      <td><button (onclick)="addProfile()" ></td>
+</tr>
+
+</table>
+
+</div>
